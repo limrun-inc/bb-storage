@@ -1,6 +1,8 @@
 package configuration
 
 import (
+	"sync"
+
 	"github.com/buildbarn/bb-storage/pkg/auth"
 	"github.com/buildbarn/bb-storage/pkg/clock"
 	"github.com/buildbarn/bb-storage/pkg/digest"
@@ -82,6 +84,8 @@ func (BaseAuthorizerFactory) NewAuthorizerFromConfiguration(config *pb.Authorize
 
 type deduplicatingAuthorizerFactory struct {
 	base AuthorizerFactory
+
+	lock sync.Mutex
 	// Keys are protojson-encoded pb.AuthorizerConfigurations
 	known map[string]auth.Authorizer
 }
@@ -103,6 +107,8 @@ func (af *deduplicatingAuthorizerFactory) NewAuthorizerFromConfiguration(config 
 	if err != nil {
 		return nil, err
 	}
+	af.lock.Lock()
+	defer af.lock.Unlock()
 	if _, ok := af.known[key]; !ok {
 		a, err := af.base.NewAuthorizerFromConfiguration(config, group, grpcClientFactory)
 		if err != nil {

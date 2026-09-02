@@ -16,7 +16,9 @@ import (
 // rawDeviceNumber is the equivalent of POSIX dev_t.
 type rawDeviceNumber = int32
 
-const oflagSearch = unix.O_SEARCH
+// golang.org/x/sys/unix does not define O_SEARCH for darwin. From the macOS
+// SDK <sys/fcntl.h>: O_SEARCH == (O_EXEC | O_DIRECTORY) == 0x40000000 | 0x00100000.
+const oflagSearch = 0x40100000
 
 func (localDirectory) Mknod(name path.Component, perm os.FileMode, deviceNumber DeviceNumber) error {
 	return status.Error(codes.Unimplemented, "Creation of device nodes is not supported on Darwin")
