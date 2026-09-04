@@ -3,6 +3,9 @@
     "purgecss": "^6.0.0"
   },
   "pnpm": {
-    "onlyBuiltDependencies": []
+    "onlyBuiltDependencies": [],
+    "overrides": {
+      "nanoid@<3.3.12": "^3.3.12"
+    }
   }
 }
