@@ -6,6 +6,7 @@ settings:
 
 overrides:
   nanoid@<3.3.12: ^3.3.12
+  postcss-selector-parser@<7.1.6: ^7.1.6
 
 importers:
 
@@ -124,8 +125,8 @@ packages:
   picocolors@1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
 
-  postcss-selector-parser@6.0.16:
-    resolution: {integrity: sha512-A0RVJrX+IUkVZbW3ClroRWurercFhieevHB38sr2+l9eUClMqome3LmEmnhlNy+5Mr2EYN6B2Kaw9wYdd+VHiw==}
+  postcss-selector-parser@7.1.6:
+    resolution: {integrity: sha512-7qASPzhKF2l2KLboRZux8CCTRMdGiV08vWmyKzPz22qZ7ZjQBOeY7rNzNoCLSUiftJ7HUq0GERHmxw/t0dCdMw==}
     engines: {node: '>=4'}
 
   postcss@8.4.38:
@@ -148,8 +149,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  source-map-js@1.2.0:
-    resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
+  source-map-js@1.2.2:
+    resolution: {integrity: sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==}
     engines: {node: '>=0.10.0'}
 
   string-width@4.2.3:
@@ -278,7 +279,7 @@ snapshots:
 
   picocolors@1.0.0: {}
 
-  postcss-selector-parser@6.0.16:
+  postcss-selector-parser@7.1.6:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
@@ -287,14 +288,14 @@ snapshots:
     dependencies:
       nanoid: 3.3.18
       picocolors: 1.0.0
-      source-map-js: 1.2.0
+      source-map-js: 1.2.2
 
   purgecss@6.0.0:
     dependencies:
       commander: 12.0.0
       glob: 10.3.12
       postcss: 8.4.38
-      postcss-selector-parser: 6.0.16
+      postcss-selector-parser: 7.1.6
 
   shebang-command@2.0.0:
     dependencies:
@@ -304,7 +305,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  source-map-js@1.2.0: {}
+  source-map-js@1.2.2: {}
 
   string-width@4.2.3:
     dependencies:
