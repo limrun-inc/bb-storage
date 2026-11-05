@@ -17,7 +17,7 @@ import (
 	"github.com/buildbarn/bb-storage/pkg/program"
 	configuration "github.com/buildbarn/bb-storage/pkg/proto/configuration/jwt"
 	"github.com/buildbarn/bb-storage/pkg/util"
-	jose "github.com/go-jose/go-jose/v3"
+	jose "github.com/go-jose/go-jose/v4"
 
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
